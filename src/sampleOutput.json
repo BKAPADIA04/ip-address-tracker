@@ -1,0 +1,21 @@
+{
+    "ip": "223.237.219.156",
+    "location": {
+      "country": "IN",
+      "region": "State of Karnataka",
+      "city": "Bengaluru",
+      "lat": 12.97194,
+      "lng": 77.59369,
+      "postalCode": "",
+      "timezone": "+05:30",
+      "geonameId": 1277333
+    },
+    "as": {
+      "asn": 45609,
+      "name": "BHARTI-MOBILITY-AS-AP",
+      "route": "223.237.192.0/19",
+      "domain": "",
+      "type": ""
+    },
+    "isp": "Bharti Airtel Limited"
+  }
