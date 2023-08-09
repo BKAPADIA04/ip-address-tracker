@@ -1,8 +1,9 @@
 import './App.css';
+import IPTracker from './components/IPTracker';
 
 function App() {
   return (
-    <h1>hey</h1>
+    <IPTracker/>
   );
 }
 
