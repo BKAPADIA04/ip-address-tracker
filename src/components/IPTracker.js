@@ -4,7 +4,7 @@ import './IPTracker.css';
 import backgroundImage from './images/backgroundDesktop.png'
 
 
-export default function IPTracker() {
+export default function IPTracker(props) {
   return (
     <>
       <div className="container">
@@ -22,7 +22,7 @@ export default function IPTracker() {
               IP ADDRESS
             </div>
             <div className="lower-text ip-Col">
-              192.212.174.101
+              {props.ipAdd}
             </div>
           </div>
           <div className="vl"></div>
@@ -31,7 +31,7 @@ export default function IPTracker() {
                 LOCATION
             </div>
             <div className="lower-text">
-            Brooklyn, NY 10001
+            {props.city}, {props.region} {props.postalCode}
             </div>
           </div>
           <div className="vl"></div>
@@ -40,7 +40,7 @@ export default function IPTracker() {
                 TIMEZONE
             </div>
             <div className="lower-text">
-                UTC -05:00
+                UTC {props.timezone}
             </div>
           </div>
           <div className="vl"></div>
@@ -49,8 +49,7 @@ export default function IPTracker() {
               ISP
             </div>
             <div className="lower-text">
-            SpaceX
-            Starlink
+            {props.as}
             </div>
           </div>
         </div>
