@@ -3,6 +3,25 @@
     /* Color */
     --violet-purple :rgba(144, 0, 255, 0.376);
     --wheat : rgb(245, 222, 179);
+    --grey : rgb(90, 89, 89);
+    /*Font Family*/
+    --fontFamily-forum: 'Forum', cursive;
+    --fontFamily-dm_sans: 'DM Sans', sans-serif;
+    --fontFamily-Gill-Sans:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Font Size */
+    --fontSize-label-1: 1.4rem;
+    --fontSize-label-2: 1.2rem;
+
+    /* Font Weight */
+    --weight-regular: 400;
+    --weight-bold: 700;
+
+    /* Letter Spacing */
+    --letterSpacing-1: 0.05em;
+
+    /* Border Radius */
+    --radius-24: 24px;
 }
 
 .container
@@ -49,3 +68,52 @@
 {
     border-color:gold;
 } */
+.data-container
+{
+    width: 1000px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: var(--radius-24);
+    background-color: aliceblue;
+    position: absolute;
+    top:55%;
+    left: 50%;
+    transform: translateX(-495px);
+    gap: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.vl 
+{
+    border-left: 0.5px solid gray;
+    height: 110px;
+    margin-top:20px ;
+}
+
+.upper-text
+{
+    padding-top: 20px;
+    font-family:var(--fontFamily-Gill-Sans);
+    font-size: var(--fontSize-label-2);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--letterSpacing-1);
+    color: var(--grey);
+}
+.lower-text
+{
+    padding-top: 10px;
+    /* font-family:var(--fontFamily-Gill-Sans); */
+    font-size: var(--fontSize-label-1);
+    font-weight: var(--weight-bold);
+    color: black;
+}
+.ip-Col
+{
+    padding-left: 40px;
+}
+.ip-col,.location-col,.timezone-col,.isp-col
+{
+    width: 250px;
+    height: 100%;
+}
