@@ -6,16 +6,16 @@ import backgroundImage from "./images/backgroundDesktop.png";
 //https:geo.ipify.org/api/v2/country,city,vpn?apiKey=at_JB6Ym6fogehLNDhrkJ0EJlz0nMfZz&ipAddress=223.237.219.156
 export default function IPTracker() {
   //State Assignment
-  const [ipAddress, setIpAddress] = useState("223.237.219.156");
-  const [country, setCountry] = useState("IN");
-  const [city, setCity] = useState("Mumbai");
-  const [region, setRegion] = useState("State of Mahārāshtra");
+  const [ipAddress, setIpAddress] = useState();
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [region, setRegion] = useState("");
   const [lat, setLat] = useState("19.07283");
   const [lng, setLng] = useState("72.88261");
-  const [postalCode, setPostalCode] = useState("400097");
-  const [timezone, setTimezone] = useState("+05:30");
+  const [postalCode, setPostalCode] = useState("");
+  const [timezone, setTimezone] = useState("");
   const [isp, setIsp] = useState(
-    "Mauli Shiv Cable Internet Services Private Limited"
+    ""
   );
   const [proxy, setProxy] = useState(false);
   const [vpn, setVpn] = useState(false);
@@ -30,6 +30,7 @@ export default function IPTracker() {
     try {
       let data = await fetch(url);
       let parsedData = await data.json();
+      console.log(parsedData);
       // setIpAddress(parsedData.ip);
       setCountry(parsedData.location.country);
       setCity(parsedData.location.city);
@@ -50,6 +51,17 @@ export default function IPTracker() {
     }
   };
 
+  const handleSubmit = (event) =>
+  {
+    alert('An ip-address was submitted: ' + ipAddress);
+    // setIpAddress(event.target.value);
+    event.preventDefault();
+  }
+
+  // const handleChange = (event) => {
+  //   setIpAddress(event.target.value);
+  // }
+
   useEffect(() => {
     updateDetails();
   });
@@ -65,15 +77,19 @@ export default function IPTracker() {
         <div className="header-text">
           <h1>IP Address Tracker</h1>
         </div>
-        <form className="ip-input">
+        <form className="ip-input" onSubmit={handleSubmit}>
+          <label>
           <input
             type="text"
             id="ip-input-text"
             name="ip-address"
             placeholder="Search for any IP address or domain"
             autoComplete="off"
+            value={ipAddress}
+            onChange={(e) => setIpAddress(e.target.value)}
           ></input>
-          <input type="submit" value="&#9655;" id="ip-input-submit"></input>
+          </label>
+          <input type="reset" value="&#9655;" id="ip-input-submit"></input>
         </form>
         <div className="data-container">
           <div className="ip-col">
@@ -84,7 +100,7 @@ export default function IPTracker() {
           <div className="location-col">
             <div className="upper-text ">LOCATION</div>
             <div className="lower-text">
-              {city}, {region} {postalCode}
+              {city}, {region},{country} {postalCode}
             </div>
           </div>
           <div className="vl"></div>
