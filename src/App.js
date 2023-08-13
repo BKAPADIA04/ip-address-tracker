@@ -1,10 +1,8 @@
 import './App.css';
-import IPTracker from './components/IPTracker';
+// import IPTracker from './components/IPTracker';
 
 function App() {
-  return (
-    <IPTracker/>
-  );
+  return;
 }
 
 export default App; 
