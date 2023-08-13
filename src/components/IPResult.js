@@ -14,7 +14,7 @@ export default function IPResult(props) {
         <div className="location-col">
           <div className="upper-text ">{props.locationColHeading}</div>
           <div className="lower-text">
-            {props.city} {props.region} {props.country} {props.postalCode}
+            {props.city},{props.region},{props.country}
           </div>
         </div>
         <div className="vl"></div>
@@ -31,18 +31,31 @@ export default function IPResult(props) {
     </>
   );
 }
+
 IPResult.defaultProps = {
   ipColHeading : "IP",
+  ipAddress : "--",
   locationColHeading : "Location",
+  city : "--",
+  region : "--",
+  country : "--",
   timezoneHeading : "Timezone",
+  time : "--",
   timezone : "UTC",
-  isp : "ISP"
+  isp : "ISP",
+  isProvider : "--"
 }
 
 IPResult.propTypes = {
-ipColHeading: PropTypes.string,
-locationColHeading : PropTypes.string,
-timezoneHeading : PropTypes.string,
-timezone : PropTypes.string,
-isp : PropTypes.string
+  ipColHeading : PropTypes.string,
+  ipAddress : PropTypes.string,
+  locationColHeading : PropTypes.string,
+  city : PropTypes.string,
+  region : PropTypes.string,
+  country : PropTypes.string,
+  timezoneHeading : PropTypes.string,
+  time : PropTypes.string,
+  timezone : PropTypes.string,
+  isp : PropTypes.string,
+  isProvider : PropTypes.string
 }

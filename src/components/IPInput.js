@@ -1,23 +1,24 @@
 import { React, useState } from "react";
 import "./IPInput.css";
 
-export default function IPInput() {
+export default function IPInput({onSubmitToApp}) {
   const [ipAddress, setIpAddress] = useState("");
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (isValid) console.log("entered");
+    if (isValid) 
+      onSubmitToApp(ipAddress);
         // onSubmitToFinal(ipAddress);
   };
 
   const handleChange = (event) => {
     let inputIp = event.target.value;
-    setIpAddress(inputIp);
-    if (inputIp === "") {
+    if (inputIp === " ") {
       setIsValid(false);
       return;
     }
+    setIpAddress(inputIp);
     setIsValid(validCheck(inputIp));
   };
   function validCheck(ipAddress) {
@@ -42,7 +43,7 @@ export default function IPInput() {
             value={ipAddress}
             onChange={handleChange}
           ></input>
-        <input type="submit" disabled = {!isValid}value="&#9655;" id="ip-input-submit"></input>
+        <input type="submit" disabled = {!isValid} value="&#9655;" id="ip-input-submit"></input>
       </form>
     </div>
     </>
