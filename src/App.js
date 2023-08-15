@@ -6,8 +6,8 @@ import {
   getInfoForRequestIP,
 } from "./components/Geolocation";
 import React, { useState, useEffect } from "react";
-import Leaflet from "./components/Leaflet";
 import LoadingBar from 'react-top-loading-bar'
+import Background from "./components/Background";
 
 // import IPTracker from './components/IPTracker';
 
@@ -62,13 +62,14 @@ function App() {
 
   
   return (
-    <div>
+    <>
     <LoadingBar
     color='#f11946'
     progress={progress}
     height={4}
     />
-      <IPInput onSubmitToApp={ipSubmitHandler} />
+    {/*<Background lat = {lat} lng = {lng}/>*/}
+      {/*<IPInput onSubmitToApp={ipSubmitHandler} />
       <IPResult
         ipAddress={ipAddress}
         city={city}
@@ -78,8 +79,26 @@ function App() {
         isProvider={isp}
         progress = {setProgress}
       />
-      <Leaflet lat = {lat} lng = {lng}/>
-    </div>
+  <Leaflet lat = {lat} lng = {lng}/>*/}
+
+  <div className="ip-container">
+    <h1 className="heading">IP Address Tracker</h1>
+    <IPInput onSubmitToApp={ipSubmitHandler} />
+    <IPResult
+        ipAddress={ipAddress}
+        city={city}
+        region={region}
+        country={country}
+        time={timezone}
+        isProvider={isp}
+        progress = {setProgress}
+      />
+  </div>
+  <Background lat = {lat} lng = {lng}/>
+
+
+
+  </> 
   );
 }
 

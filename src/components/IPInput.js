@@ -29,10 +29,6 @@ export default function IPInput({onSubmitToApp}) {
 
   return (
     <>
-    <div className="container">
-      <div className="header-text">
-        <h1>IP Address Tracker</h1>
-      </div>
       <form className="ip-input" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -43,9 +39,8 @@ export default function IPInput({onSubmitToApp}) {
             value={ipAddress}
             onChange={handleChange}
           ></input>
-        <input type="submit" disabled = {!isValid} value="&#9655;" id="ip-input-submit"></input>
+        <input type = "submit" disabled = {!isValid} value="&#9655;" id="ip-input-submit"></input>
       </form>
-    </div>
     </>
   );
 }

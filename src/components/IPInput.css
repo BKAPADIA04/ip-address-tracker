@@ -49,10 +49,10 @@
 }
 .ip-input
 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-210px);
+    /* position: absolute; */
+    /* top: 30%;
+    left: 50%; */
+    /* transform: translateX(-210px); */
     display: flex;
     flex-direction: row;
 }
@@ -66,8 +66,27 @@
 #ip-input-submit
 {
     padding: 10px;
-    background-color: black;
+    background-color: #333333;
     color: aliceblue;
     border-radius:0px 10px 10px 0px;
     border:2px solid black;
+}
+#ip-input-submit:hover,#in-input-submit:focus
+{
+    padding: 10px;
+    background-color: #000000;
+    color: aliceblue;
+    border-radius:0px 10px 10px 0px;
+    border:2px solid black;
+    cursor: pointer;
+}
+
+#ip-input-submit:disabled
+{
+    padding: 10px;
+    background-color: #4D4D4D;
+    color: aliceblue;
+    border-radius:0px 10px 10px 0px;
+    border:2px solid black;
+    cursor:default;
 }

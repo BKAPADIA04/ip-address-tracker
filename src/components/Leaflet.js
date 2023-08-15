@@ -22,7 +22,7 @@ export default function Leaflet(props) {
       <MapContainer
         style={{ height: "100vh", width: "100vw" }}
         center={position}
-        zoom={13}
+        zoom={15}
         scrollWheelZoom={false}
       >
         <TileLayer

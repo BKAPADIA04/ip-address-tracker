@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+:root
+{
+    /* Color */
+    --violet-purple :rgba(144, 0, 255, 0.376);
+    --wheat : rgb(245, 222, 179);
+    --grey : rgb(90, 89, 89);
+    /*Font Family*/
+    --fontFamily-forum: 'Forum', cursive;
+    --fontFamily-dm_sans: 'DM Sans', sans-serif;
+    --fontFamily-Gill-Sans:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Font Size */
+    --fontSize-label-1: 1.4rem;
+    --fontSize-label-2: 1.2rem;
+
+    /* Font Weight */
+    --weight-regular: 400;
+    --weight-bold: 700;
+
+    /* Letter Spacing */
+    --letterSpacing-1: 0.05rem;
+    --letterSpacing-2: 0.01rem;
+
+    /* Border Radius */
+    --radius-24: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ip-container
+{
+  width: 90%;
+  z-index: 10;
+  margin: 1rem auto 1rem auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2.5rem;
+}
+  
+.heading
+{
+    color:var(--wheat);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--letterSpacing-2);
+    font-family: var(--fontFamily-Gill-Sans);
+    text-transform: uppercase;
+    align-self: center;
+    /* animation:occasion_animation 2s linear 1s normal forwards; */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes occasion_animation {
+  0%
+  {
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100%
+  {
+      opacity: 1;
   }
 }

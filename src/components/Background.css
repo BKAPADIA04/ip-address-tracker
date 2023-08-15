@@ -1,0 +1,26 @@
+.container 
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+  
+.ip-section 
+{
+    height: 35%;
+}
+
+.map-section
+{
+    height: 65%;
+}
+
+.img 
+{
+    width: 100%;
+    height: 100%;
+}
