@@ -32,10 +32,6 @@
     border: 3px solid black;
     border-radius: var(--radius-24);
     background-color: rgb(8, 26, 41);
-    /* position: absolute; */
-    /* top:30%; */
-    /* left: 50%; */
-    /* transform: translateX(-500px); */
     gap: 2em;
     display: flex;
     flex-direction: row;

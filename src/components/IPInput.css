@@ -4,6 +4,9 @@
     --violet-purple :rgba(209, 4, 4, 0.376);
     --wheat : rgb(245, 203, 179);
     --grey : rgb(90, 89, 89);
+    --hover-submit :  #000000;
+    --hover-disabled : #4D4D4D;
+    --submit-submit : #333333;
     /*Font Family*/
     --fontFamily-forum: 'Forum', cursive;
     --fontFamily-dm_sans: 'DM Sans', sans-serif;
@@ -49,10 +52,6 @@
 }
 .ip-input
 {
-    /* position: absolute; */
-    /* top: 30%;
-    left: 50%; */
-    /* transform: translateX(-210px); */
     display: flex;
     flex-direction: row;
 }
@@ -66,7 +65,7 @@
 #ip-input-submit
 {
     padding: 10px;
-    background-color: #333333;
+    background-color: var(--submit-submit);
     color: aliceblue;
     border-radius:0px 10px 10px 0px;
     border:2px solid black;
@@ -74,7 +73,7 @@
 #ip-input-submit:hover,#in-input-submit:focus
 {
     padding: 10px;
-    background-color: #000000;
+    background-color: var(--hover-submit);
     color: aliceblue;
     border-radius:0px 10px 10px 0px;
     border:2px solid black;
@@ -84,7 +83,7 @@
 #ip-input-submit:disabled
 {
     padding: 10px;
-    background-color: #4D4D4D;
+    background-color: var(--hover-disabled);
     color: aliceblue;
     border-radius:0px 10px 10px 0px;
     border:2px solid black;

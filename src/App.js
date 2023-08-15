@@ -1,19 +1,17 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import IPInput from "./components/IPInput";
-import IPResult from "./components/IPResult";
 import {
   getInfoForCurrentIP,
   getInfoForRequestIP,
 } from "./components/Geolocation";
-import React, { useState, useEffect } from "react";
-import LoadingBar from 'react-top-loading-bar'
+import IPInput from "./components/IPInput";
+import IPResult from "./components/IPResult";
 import Background from "./components/Background";
-
-// import IPTracker from './components/IPTracker';
+import LoadingBar from "react-top-loading-bar";
 
 function App() {
-  document.title = 'IP ADDRESS TRACKER';
-  const [progress,setProgress] = useState(0);
+  document.title = "IP ADDRESS TRACKER";
+  const [progress, setProgress] = useState(0);
   const [ipAddress, setIpAddress] = useState();
   const [city, setCity] = useState();
   const [region, setRegion] = useState();
@@ -47,58 +45,36 @@ function App() {
       setIsp(geoInfo.data.isp);
       setLat(geoInfo.data.location.lat);
       setLng(geoInfo.data.location.lng);
-      // setLatLong([geoInfo.data.location.lat,geoInfo.data.location.lng]);
-      // console.log(latlong);
     } else {
       console.log("An error has occurred ", geoInfo.error);
     }
   };
+
   // console.log(geoInfo);
   const getInfoDefault = () => {
     getInfoByAPI({ useRequestAddress: true, ipAddress: "" });
   };
 
-  useEffect(getInfoDefault,[]);
+  useEffect(getInfoDefault, []);
 
-  
   return (
     <>
-    <LoadingBar
-    color='#f11946'
-    progress={progress}
-    height={4}
-    />
-    {/*<Background lat = {lat} lng = {lng}/>*/}
-      {/*<IPInput onSubmitToApp={ipSubmitHandler} />
-      <IPResult
-        ipAddress={ipAddress}
-        city={city}
-        region={region}
-        country={country}
-        time={timezone}
-        isProvider={isp}
-        progress = {setProgress}
-      />
-  <Leaflet lat = {lat} lng = {lng}/>*/}
-
-  <div className="ip-container">
-    <h1 className="heading">IP Address Tracker</h1>
-    <IPInput onSubmitToApp={ipSubmitHandler} />
-    <IPResult
-        ipAddress={ipAddress}
-        city={city}
-        region={region}
-        country={country}
-        time={timezone}
-        isProvider={isp}
-        progress = {setProgress}
-      />
-  </div>
-  <Background lat = {lat} lng = {lng}/>
-
-
-
-  </> 
+      <LoadingBar color="#f11946" progress={progress} height={4} />
+      <div className="ip-container">
+        <h1 className="heading">IP Address Tracker</h1>
+        <IPInput onSubmitToApp={ipSubmitHandler} />
+        <IPResult
+          ipAddress={ipAddress}
+          city={city}
+          region={region}
+          country={country}
+          time={timezone}
+          isProvider={isp}
+          progress={setProgress}
+        />
+      </div>
+      <Background lat={lat} lng={lng} />
+    </>
   );
 }
 
